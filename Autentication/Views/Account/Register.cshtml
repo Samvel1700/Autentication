@@ -1,0 +1,150 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<!-- Gyorgi - Register -->
+
+<div class="login-wrapper">
+    <div class="login-card">
+        <div class="login-header">
+            <h2>Գրանցում</h2>
+            <p>Ստեղծեք նոր հաշիվ</p>
+        </div>
+
+        <form asp-action="Register" method="post">
+            <div asp-validation-summary="All" class="text-danger error-summary"></div>
+
+            <div class="form-group">
+                <label for="username">Օգտանուն (Username)</label>
+                <input type="text" id="username" name="username" placeholder="Մուտքագրեք username-ը" required autocomplete="off" />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Գաղտնաբառ (Password)</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required />
+            </div>
+
+            <button type="submit" class="btn-login">Գրանցվել</button>
+        </form>
+
+        <div style="text-align: center; margin-top: 15px;">
+            <a asp-action="Login" style="color: #667eea; text-decoration: none; font-size: 14px;">Արդեն ունե՞ք հաշիվ։ Մուտք գործեք</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .login-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 75vh;
+        padding: 20px;
+    }
+
+    .login-card {
+        background: #ffffff;
+        padding: 40px 35px;
+        border-radius: 16px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .login-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+    .login-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+        .login-header h2 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        .login-header p {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #777777;
+        }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #444444;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1e5ee;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+            .form-group input:focus {
+                border-color: #667eea;
+                box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+            }
+
+    .btn-login {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.3s ease, transform 0.2s ease;
+        margin-top: 10px;
+    }
+
+        .btn-login:hover {
+            opacity: 0.95;
+            transform: scale(1.01);
+        }
+
+        .btn-login:active {
+            transform: scale(0.99);
+        }
+
+    .error-summary ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 0 15px 0;
+    }
+
+    .error-summary li {
+        background-color: #ffe5e5;
+        color: #d93838;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 13px;
+        text-align: center;
+        border: 1px solid #ffcccc;
+    }
+</style>
